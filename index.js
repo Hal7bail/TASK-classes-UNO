@@ -31,12 +31,49 @@
 let cards = []; // You will use this array in step 6
 
 // Continue the code here 👇🏻
-
 /**
  *
  * Don't touch this code
  * This function is going to render the cards array to the HTML page,
  */
+
+class Card {
+  constructor(color, number) {
+    this.color = color;
+    this.number = number;
+  }
+  image() {
+    return `./Images/${this.color}_${this.number}.png`;
+  }
+}
+
+// const object1 = new Card("green", 4);
+// // object1.image()
+// // "./image/green_4.png"
+// const object2 = new Card("blue", 7);
+// const object3 = new Card("red", 3);
+// const object4 = new Card("yellow", 8);
+
+// console.log(object1);
+// console.log(object2);
+// console.log(object3);
+// console.log(object4);
+
+for (let i = 0; i <= 9; i++) {
+  const object1 = new Card("Green", i);
+  const object2 = new Card("Blue", i);
+  const object3 = new Card("Red", i);
+  const object4 = new Card("Yellow", i);
+  cards.push(object1);
+  cards.push(object1);
+  cards.push(object2);
+  cards.push(object2);
+  cards.push(object3);
+  cards.push(object3);
+  cards.push(object4);
+  cards.push(object4);
+}
+
 function render(array) {
   document.getElementById("cards-container").innerHTML = array
     .map(cardComponent)
